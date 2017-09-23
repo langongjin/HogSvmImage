@@ -18,7 +18,7 @@ cv::Mat org;
 
 HOGDescriptor initialize_descriptor_by_file(ifstream &fin){
 
-    HOGDescriptor myHOG(Size(112,24),Size(16,16),Size(8,8),Size(8,8),9);//HOG检测器，设置HOGDescriptor的检测子,用来计算HOG描述子的
+    HOGDescriptor myHOG(Size(32,64),Size(16,16),Size(8,8),Size(8,8),9);//HOG检测器，设置HOGDescriptor的检测子,用来计算HOG描述子的
 
     float val = 0.0f;
     vector<float> myDetector;
@@ -92,8 +92,8 @@ int main()
     struct timeval timeStart, timeEnd;
     double timeDiff;
     vector<string> file_names;
-    //49_0502_800_600/30_0503_800_600/148_0504pm/
-    getFiles("/Users/lan/Desktop/TarReg/svm/crop_samples/tobecroped/49_0502_800_600",file_names);
+    
+    getFiles("/Users/lan/Desktop/TarReg/svm/crop_samples/tobecroped/49_0502",file_names);
 
     namedWindow("img");// define a image window
     for(int i=0;i<file_names.size();i++){
